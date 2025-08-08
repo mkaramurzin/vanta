@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import { brand } from '@/lib/brand'
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 text-white pt-24 pb-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white pt-24 pb-20 overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
       
@@ -17,17 +18,17 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-sky-500/20 border border-sky-400/30 rounded-full text-sky-300 text-sm font-medium mb-6">
             <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            Licensed & Insured • 15+ Years Experience
+            {brand.business.licenses} • {brand.business.experience}
           </div>
 
           {/* Main headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="block">Premium Tile</span>
-            <span className="block text-blue-400">Installation & Repair</span>
+            <span className="block text-sky-400">Installation & Flooring</span>
           </h1>
 
           {/* Subheadline */}
@@ -38,19 +39,19 @@ export default function Hero() {
 
           {/* Key benefits */}
           <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm font-medium">
-            <div className="flex items-center text-blue-300">
+            <div className="flex items-center text-sky-300">
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               Free Estimates
             </div>
-            <div className="flex items-center text-blue-300">
+            <div className="flex items-center text-sky-300">
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
               Same-Day Service
             </div>
-            <div className="flex items-center text-blue-300">
+            <div className="flex items-center text-sky-300">
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
@@ -62,12 +63,12 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/contact" 
-              className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Get Free Quote
+              {brand.cta.primary}
             </Link>
             <Link 
               href="/services" 
@@ -76,20 +77,20 @@ export default function Hero() {
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
-              View Services
+              {brand.cta.secondary}
             </Link>
           </div>
 
           {/* Trust indicators */}
           <div className="mt-12 pt-8 border-t border-white/20">
-            <p className="text-gray-400 text-sm mb-4">Trusted by 500+ homeowners across the region</p>
+            <p className="text-gray-400 text-sm mb-4">Trusted by {brand.business.projectsCompleted} homeowners {brand.business.serviceArea}</p>
             <div className="flex items-center justify-center space-x-2">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
-              <span className="ml-2 text-white font-medium">4.9/5 Rating</span>
+              <span className="ml-2 text-white font-medium">{brand.business.rating} Rating</span>
             </div>
           </div>
         </div>

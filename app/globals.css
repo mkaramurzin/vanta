@@ -2,12 +2,20 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
+  --primary: #111827;
+  --accent: #0EA5E9;
+  --secondary: #374151;
+  --light: #F9FAFB;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
+  --color-light: var(--light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

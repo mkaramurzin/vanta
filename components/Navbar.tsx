@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import Image from 'next/image'
+import { brand } from '@/lib/brand'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,24 +14,30 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
-              Tima Tiles
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/images/vanta-logo.png" 
+                alt={brand.companyName}
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-1">
-              <Link href="/" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/" className="text-gray-800 hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Home
               </Link>
-              <Link href="/about" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/about" className="text-gray-800 hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 About
               </Link>
-              <Link href="/services" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-800 hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors ml-4">
+              <Link href="/contact" className="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors ml-4">
                 Contact
               </Link>
             </div>
@@ -39,7 +47,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="bg-white hover:bg-gray-50 inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors"
+              className="bg-white hover:bg-gray-50 inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-sky-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500 transition-colors"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -63,28 +71,28 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link 
               href="/" 
-              className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-gray-800 hover:text-sky-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link 
               href="/about" 
-              className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-gray-800 hover:text-sky-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
             <Link 
               href="/services" 
-              className="text-gray-700 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+              className="text-gray-800 hover:text-sky-500 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Services
             </Link>
             <Link 
               href="/contact" 
-              className="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium mx-3 mt-3 transition-colors text-center"
+              className="bg-sky-500 hover:bg-sky-600 text-white block px-3 py-2 rounded-md text-base font-medium mx-3 mt-3 transition-colors text-center"
               onClick={() => setIsOpen(false)}
             >
               Contact
